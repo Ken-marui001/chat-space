@@ -25,7 +25,7 @@ Things you may want to cover:
 
 DB
 =====================================
-##Userテーブル
+##Usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -33,3 +33,7 @@ DB
 |name|varchar(255)|null: false|
 |email|varchar(255)|null: false, unique: true|
 |password|varchar(255)|null: false|
+
+###Association
+- has_many :messages
+- has_many :groups, through: groups_users
