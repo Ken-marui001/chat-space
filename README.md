@@ -37,3 +37,11 @@ DB
 ###Association
 - has_many :messages
 - has_many :groups, through: groups_users
+
+##Groupsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, unique: true|
+|name|varchar(255)|null: false, unique: true|
+|password|varchar(255)||
