@@ -25,7 +25,7 @@ Things you may want to cover:
 
 DB
 =====================================
-##Usersテーブル
+## Usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -34,11 +34,11 @@ DB
 |email|varchar(255)|null: false, unique: true|
 |password|varchar(255)|null: false|
 
-###Association
+### Association
 - has_many :messages
 - has_many :groups, through: groups_users
 
-##Groupsテーブル
+## Groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -46,12 +46,12 @@ DB
 |name|varchar(255)|null: false, unique: true|
 |password|varchar(255)||
 
-###Association
+### Association
 - has_many :messages
 - has_many :users, through: groups_users
 - has_many :tags, through: groups_tags
 
-##Messagesテーブル
+## Messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -62,11 +62,11 @@ DB
 |image|text||
 |send_at|datetime|null: false|
 
-###Association
+### Association
 - belongs_to :user
 - belongs_to :group
 
-##Tagsテーブル
+## Tagsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -74,10 +74,10 @@ DB
 |name|varchar(255)|null: false, unique: true|
 
 
-###Association
+### Association
 - has_many :groups
 
-##Groups_usersテーブル
+## Groups_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -85,11 +85,11 @@ DB
 |user_id|integer|null:false, foreign_key: true|
 |group_id|ubteger|null:false, foreign_key: true|
 
-###Association
+### Association
 - belongs_to :user
 - belongs_to :group
 
-##Groups_tagsテーブル
+## Groups_tagsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -97,6 +97,6 @@ DB
 |tag_id|integer|null:false, foreign_key: true|
 |group_id|ubteger|null:false, foreign_key: true|
 
-###Association
+### Association
 - belongs_to :tag
 - belongs_to :group
