@@ -45,3 +45,8 @@ DB
 |id|integer|null: false, unique: true|
 |name|varchar(255)|null: false, unique: true|
 |password|varchar(255)||
+
+###Association
+- has_many :messages
+- has_many :users, through: groups_users
+- has_many :tags, through: groups_tags
