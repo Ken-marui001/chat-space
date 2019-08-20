@@ -76,3 +76,16 @@ DB
 
 ###Association
 - has_many :groups
+
+##Groups_usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, unique: true|
+|user_id|integer|null:false, foreign_key: true|
+|group_id|ubteger|null:false, foreign_key: true|
+
+###Association
+- belongs_to :user
+- belongs_to :group
+
