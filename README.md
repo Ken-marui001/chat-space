@@ -50,3 +50,15 @@ DB
 - has_many :messages
 - has_many :users, through: groups_users
 - has_many :tags, through: groups_tags
+
+##Messagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, unique: true|
+|user_id|integer|null:false, foreign_key: true|
+|text|text||
+|image|text||
+|send_at|datetime|null: false|
+
+
