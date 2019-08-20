@@ -89,3 +89,14 @@ DB
 - belongs_to :user
 - belongs_to :group
 
+##Groups_tagsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, unique: true|
+|tag_id|integer|null:false, foreign_key: true|
+|group_id|ubteger|null:false, foreign_key: true|
+
+###Association
+- belongs_to :tag
+- belongs_to :group
