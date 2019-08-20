@@ -26,3 +26,10 @@ Things you may want to cover:
 DB
 =====================================
 ##Userテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, unique: true|
+|name|varchar(255)|null: false|
+|email|varchar(255)|null: false, unique: true|
+|password|varchar(255)|null: false|
