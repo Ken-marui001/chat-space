@@ -65,3 +65,14 @@ DB
 ###Association
 - belongs_to :user
 - belongs_to :group
+
+##Tagsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, unique: true|
+|name|varchar(255)|null: false, unique: true|
+
+
+###Association
+- has_many :groups
