@@ -57,8 +57,11 @@ DB
 |------|----|-------|
 |id|integer|null: false, unique: true|
 |user_id|integer|null:false, foreign_key: true|
+|group_id|ubteger|null:false, foreign_key: true|
 |text|text||
 |image|text||
 |send_at|datetime|null: false|
 
-
+###Association
+- belongs_to :user
+- belongs_to :group
