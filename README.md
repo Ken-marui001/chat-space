@@ -59,7 +59,7 @@ DB
 |group_id|integer|null:false, foreign_key: true|
 |text|text||
 |image|text||
-|send_at|datetime|null: false|
+|created_at|datetime|null: false|
 
 ### Association
 - belongs_to :user
