@@ -7,8 +7,12 @@
         %ul.side-header__box__menu
           %li.side-header__box__menu__list
             test-abc
-          %li.side-header__box__menu__list.fas.fa-edit
-          %li.side-header__box__menu__list.fas.fa-cog
+          =link_to " " do
+            %li.side-header__box__menu__list
+              =fa_icon("edit")
+          =link_to " " do
+            %li.side-header__box__menu__list
+              =fa_icon("cog")
     .groups
       =link_to " " do
         .group
@@ -23,8 +27,9 @@
           sample
         .main-header__title__info
           Member : sample
-        .main-header__edit-button
-          Edit
+        =link_to " " do
+          .main-header__edit-button
+            Edit
     .messages
       .messages__menu
         .messages__menu__list
