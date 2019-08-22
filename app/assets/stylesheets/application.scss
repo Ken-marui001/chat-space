@@ -1,6 +1,14 @@
 @import "./reset";
 @import " font-awesome ";
 
+$color-skyblue: #38AEF0;
+
+.flash-box{
+  text-align: center;
+  color: white;
+  background-color: $color-skyblue;
+}
+
 .wrapper{
   display: flex;
   flex-direction: row;
@@ -15,6 +23,6 @@
 }
 
 .chat-main{
-  width: calc(100vw - 300px;);
+  width: calc(100vw - 300px);
   height: 100vw;
 }
