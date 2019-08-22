@@ -25,7 +25,7 @@ $side-header-height: 100px;
 
 .chat-side{
   width: $chat-side-width;
-  height: 100vw;
+  height: 100vh;
   color: #ffffff;
 
   a{
@@ -70,7 +70,7 @@ $side-header-height: 100px;
 }
 .chat-main{
   width: calc(100vw - #{$chat-side-width});
-  height: 100vw;
+  height: 100vh;
 }
 
 .main-header{
@@ -101,6 +101,10 @@ $side-header-height: 100px;
     height: 40px;
     line-height: 40px;
   }
+}
+
+.messages{
+  height: calc(100vh - 190px);
 }
 
 .form{
