@@ -46,9 +46,9 @@
       = render 'message'
     .form
       %form.form__box
-        .form__box__data
-          %input.form__box__data__text{type: 'text', name: 'name', placeholder: 'type a text'}
-          %label.form__box__data__image
+        .form__box__inputs
+          %input.form__box__inputs__text{type: 'text', name: 'name', placeholder: 'type a text'}
+          %label.form__box__inputs__image
             =fa_icon('image')
             %input{type: 'file', name: 'image'}
         %input.form__box__send-button{type: 'submit', value: 'Send'}
