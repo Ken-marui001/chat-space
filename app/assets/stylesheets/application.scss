@@ -41,6 +41,9 @@
     }
     &__menu{
       display: flex;
+      &__list{
+        padding-left: 5px;
+      }
     }
   }
 }
