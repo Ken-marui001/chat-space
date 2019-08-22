@@ -2,13 +2,6 @@
 @import "./variable";
 @import " font-awesome ";
 
-// color
-$color-skyblue: #38AEF0;
-$color-info: #999999;
-// width or heigth
-$chat-side-width: 300px;
-$side-header-height: 100px;
-
 *{
   box-sizing: border-box;
 }
@@ -76,6 +69,7 @@ $side-header-height: 100px;
 .main-header{
   display: flex;
   justify-content: space-between;
+  height: $main-header-height;
   padding: 0 40px;
   border-bottom: solid thin #eeeeee;
   a{
@@ -104,16 +98,40 @@ $side-header-height: 100px;
 }
 
 .messages{
-  height: calc(100vh - 190px);
+  height: calc(100vh - #{$main-header-height + $form-heigth});
+  background-color: #fafafa;
   padding: 0 40px;
   padding-top: 23px;
+}
+
+.message{
+  padding: 20px 0;
+  &__list{
+    color: $color-message;
+    &__info{
+      display: flex;
+      &__name{
+        font-size: 16px;
+        font-weight: bold;
+      }
+      &__date{
+        font-size: 12px;
+        color: $color-info;
+      }
+    }
+    &__text{
+      padding-top: 10px;
+      font-size: 14px;
+    }
+  }
 }
 
 
 .form{
   background-color: $color-info;
+  color: $color-message;
   position: relative;
-  height: 90px;
+  height: $form-heigth;
   &__box{
     display: flex;
     padding: 0 40px;

@@ -20,12 +20,7 @@
             sample
           %p.group__latest-message
             よろしくお願いします
-      =link_to " " do
-        .group
-          %p.group__title
-            sample-1
-          %p.group__latest-message
-            よろしくお願いします。
+      =render 'group'
   .chat-main
     .main-header
       .main-header__title
@@ -47,7 +42,8 @@
           %li.message__list__box
             %p.message__list__box__text
               よろしくお願いします
-            .message__list__box__image
+            %img.message__list__box__image{src: " ", alt: " ", title: ""}
+      = render 'message'
     .form
       %form.form__box
         .form__box__data
