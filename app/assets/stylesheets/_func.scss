@@ -1,0 +1,11 @@
+//set background-color and color
+@mixin set-color($bgc, $fc){
+  background-color: $bgc;
+  color: $fc;
+}
+
+//make  a word block beauty
+@mixin single-block($block-height){
+  height: $block-height;
+  line-height: $block-height;
+}

@@ -1,5 +1,6 @@
 @import "./reset";
 @import "./variable";
+@import "./func";
 @import " font-awesome ";
 
 *{
@@ -7,8 +8,7 @@
 }
 .flash-box{
   text-align: center;
-  color: white;
-  background-color: $color-skyblue;
+  @include set-color($color-skyblue, white);
 }
 
 .wrapper{
@@ -30,8 +30,7 @@
 .side-header{
   background-color: #253141;
   padding: 0 20px;
-  height: $side-header-height;
-  line-height: $side-header-height;
+  @include single-block($side-header-height);
   &__box{
     display: flex;
     justify-content: space-between;
@@ -95,8 +94,7 @@
     border: solid thin #{$color-skyblue};
     padding: 0 20px;
     margin-top: 28px;
-    height: 40px;
-    line-height: 40px;
+    @include single-block(40px);
   }
 }
 
@@ -131,15 +129,13 @@
 
 
 .form{
-  background-color: $color-info;
-  color: $color-message;
+  @include set-color($color-info, $color-message);
   position: relative;
   height: $form-heigth;
   &__box{
     display: flex;
     padding: 0 40px;
-    height: 50px;
-    line-height: 50px;
+    @include single-block(50px);
     width: 100%;
     position: absolute;
     top: 20px;
@@ -163,8 +159,7 @@
       }
     }
     &__send-button{
-      color: white;
-      background-color: $color-skyblue;
+      @include set-color($color-skyblue, white);
       width: 100px;
       padding: 0 30px;
       margin-left: 15px;
