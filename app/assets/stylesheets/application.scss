@@ -1,7 +1,12 @@
 @import "./reset";
+@import "./variable";
 @import " font-awesome ";
 
+// color
 $color-skyblue: #38AEF0;
+// width or heigth
+$chat-side-width: 300px;
+$side-header-height: 100px;
 
 *{
   box-sizing: border-box;
@@ -18,25 +23,26 @@ $color-skyblue: #38AEF0;
 }
 
 .chat-side{
-  width: 300px;
+  width: $chat-side-width;
   height: 100vw;
   a{
     color: white;
+    text-decoration: none;
   }
 }
 
 .side-header{
   background-color: #253141;
-  color: #ffffff;
   padding: 0 20px;
-  height: 100px;
-  line-height: 100px;
+  height: $side-header-height;
+  line-height: $side-header-height;
   &__box{
     display: flex;
     justify-content: space-between;
     &__user-name{
       font-size: 16px;
       font-weight: bold;
+      color: #ffffff;
     }
     &__menu{
       display: flex;
@@ -44,7 +50,16 @@ $color-skyblue: #38AEF0;
   }
 }
 
+.groups{
+  background-color: #2f3e51;
+  padding: 0 20px;
+  height: calc(100vh - #{$side-header-height});
+}
+
+.group{
+  
+}
 .chat-main{
-  width: calc(100vw - 300px);
+  width: calc(100vw - #{$chat-side-width});
   height: 100vw;
 }
