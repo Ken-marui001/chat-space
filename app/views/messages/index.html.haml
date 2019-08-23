@@ -25,10 +25,17 @@
             =image_tag " ", alt: " ", title: ""
       = render 'message'
     .form
-      %form.form__box
+      -# %form.form__box
+      -#   .form__box__inputs
+      -#     %input.form__box__inputs__text{type: 'text', name: 'name', placeholder: 'type a text'}
+      -#     %label.form__box__inputs__image
+      -#       =fa_icon('image')
+      -#       %input{type: 'file', name: 'image'}
+      -#   %input.form__box__send-button{type: 'submit', value: 'Send'}
+      =form_for [@group, @message], html: {class: 'form__box'} do |f|
         .form__box__inputs
-          %input.form__box__inputs__text{type: 'text', name: 'name', placeholder: 'type a text'}
-          %label.form__box__inputs__image
-            =fa_icon('image')
-            %input{type: 'file', name: 'image'}
-        %input.form__box__send-button{type: 'submit', value: 'Send'}
+          = f.text_field :text, class: 'form__box__inputs__text', placeholder: 'type a text'
+          = f.label :image, class: 'form__box__inputs__image' do
+            = fa_icon 'image'
+            = f.text_field :image
+        = f.submit 'Send', class: "form__box__send-button"
