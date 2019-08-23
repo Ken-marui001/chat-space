@@ -1,0 +1,19 @@
+.side-header
+  .side-header__box
+    %p.side-header__box__user-name
+      test-abc
+    %ul.side-header__box__menu
+      =link_to " " do
+        %li.side-header__box__menu__list
+          =fa_icon("edit")
+      =link_to  do
+        %li.side-header__box__menu__list
+          =fa_icon("cog")
+.groups
+  =link_to " " do
+    .group
+      %p.group__title
+        sample
+      %p.group__latest-message
+        よろしくお願いします
+  =render 'group'
