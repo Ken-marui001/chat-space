@@ -3,17 +3,12 @@
     %p.side-header__box__user-name
       =current_user.name
     %ul.side-header__box__menu
-      =link_to " " do
+      =link_to new_group_path do
         %li.side-header__box__menu__list
           =fa_icon("edit")
       =link_to edit_user_path(current_user) do
         %li.side-header__box__menu__list
           =fa_icon("cog")
 .groups
-  =link_to " " do
-    .group
-      %p.group__title
-        sample
-      %p.group__latest-message
-        よろしくお願いします
-  =render 'group'
+  - current_user.groups.each do |group|
+    =render 'shared/group', group: group
