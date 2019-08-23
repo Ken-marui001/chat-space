@@ -1,0 +1,54 @@
+%p.flash-box
+  グループを作成しました
+.wrapper
+  .chat-side
+    .side-header
+      .side-header__box
+        %p.side-header__box__user-name
+          test-abc
+        %ul.side-header__box__menu
+          =link_to " " do
+            %li.side-header__box__menu__list
+              =fa_icon("edit")
+          =link_to " " do
+            %li.side-header__box__menu__list
+              =fa_icon("cog")
+    .groups
+      =link_to " " do
+        .group
+          %p.group__title
+            sample
+          %p.group__latest-message
+            よろしくお願いします
+      =render 'group'
+  .chat-main
+    .main-header
+      .main-header__title
+        .main-header__title__name
+          sample
+        .main-header__title__info
+          Member : sample
+      =link_to " " do
+        .main-header__edit-button
+          Edit
+    .messages
+      .message
+        %ul.message__list
+          %li.message__list__info
+            %p.message__list__info__name
+              test-abc
+            %p.message__list__info__date
+              2019/08/21(Wed) 15:25:59
+          %li.message__list__box
+            %p.message__list__box__text
+              よろしくお願いします
+            =image_tag " ", alt: " ", title: ""
+      = render 'message'
+    .form
+      %form.form__box
+        .form__box__inputs
+          %input.form__box__inputs__text{type: 'text', name: 'name', placeholder: 'type a text'}
+          %label.form__box__inputs__image
+            =fa_icon('image')
+            %input{type: 'file', name: 'image'}
+        %input.form__box__send-button{type: 'submit', value: 'Send'}
