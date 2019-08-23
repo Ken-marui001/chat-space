@@ -1,14 +1,12 @@
 @import "./reset";
 @import "./variable";
 @import "./func";
+@import "./user.scss";
+@import "./falsh.scss";
 @import " font-awesome ";
 
 *{
   box-sizing: border-box;
-}
-.flash-box{
-  text-align: center;
-  @include set-color($color-skyblue, white);
 }
 
 .wrapper{

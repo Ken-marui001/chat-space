@@ -1,26 +1,6 @@
-%p.flash-box
-  グループを作成しました
 .wrapper
   .chat-side
-    .side-header
-      .side-header__box
-        %p.side-header__box__user-name
-          test-abc
-        %ul.side-header__box__menu
-          =link_to " " do
-            %li.side-header__box__menu__list
-              =fa_icon("edit")
-          =link_to " " do
-            %li.side-header__box__menu__list
-              =fa_icon("cog")
-    .groups
-      =link_to " " do
-        .group
-          %p.group__title
-            sample
-          %p.group__latest-message
-            よろしくお願いします
-      =render 'group'
+    =render 'shared/side-bar'
   .chat-main
     .main-header
       .main-header__title
@@ -28,7 +8,7 @@
           sample
         .main-header__title__info
           Member : sample
-      =link_to " " do
+      =link_to edit_user_path(current_user) do
         .main-header__edit-button
           Edit
     .messages
