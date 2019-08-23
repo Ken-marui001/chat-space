@@ -1,12 +1,12 @@
 .side-header
   .side-header__box
     %p.side-header__box__user-name
-      test-abc
+      =current_user.name
     %ul.side-header__box__menu
       =link_to " " do
         %li.side-header__box__menu__list
           =fa_icon("edit")
-      =link_to  do
+      =link_to edit_user_path(current_user) do
         %li.side-header__box__menu__list
           =fa_icon("cog")
 .groups
