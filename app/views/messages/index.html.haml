@@ -12,8 +12,7 @@
         .main-header__edit-button
           Edit
     .messages
-      - @messages.each do |message|
-        = render 'message', message: message
+      = render @messages
     .form
       =form_for [@group, @message], html: {class: 'form__box'} do |f|
         .form__box__inputs
