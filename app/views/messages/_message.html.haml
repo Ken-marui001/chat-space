@@ -2,10 +2,11 @@
   %ul.message__list
     %li.message__list__info
       %p.message__list__info__name
-        test-abc
+        = message.user.name
       %p.message__list__info__date
-        2019/08/21(Wed) 15:25:59
+        = message.created_at.strftime("%Y/%m/%d %H:%M")
     %li.message__list__box
-      %p.message__list__box__text
-        Hello Chat-space
-      =image_tag " ", alt: " ", title: ""
+      - if message.text.present?
+        %p.message__list__box__text
+          = message.text
+      =image_tag message.image.url if message.image.present?

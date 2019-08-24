@@ -12,26 +12,8 @@
         .main-header__edit-button
           Edit
     .messages
-      .message
-        %ul.message__list
-          %li.message__list__info
-            %p.message__list__info__name
-              test-abc
-            %p.message__list__info__date
-              2019/08/21(Wed) 15:25:59
-          %li.message__list__box
-            %p.message__list__box__text
-              よろしくお願いします
-            =image_tag " ", alt: " ", title: ""
-      = render 'message'
+      = render @messages
     .form
-      -# %form.form__box
-      -#   .form__box__inputs
-      -#     %input.form__box__inputs__text{type: 'text', name: 'name', placeholder: 'type a text'}
-      -#     %label.form__box__inputs__image
-      -#       =fa_icon('image')
-      -#       %input{type: 'file', name: 'image'}
-      -#   %input.form__box__send-button{type: 'submit', value: 'Send'}
       =form_for [@group, @message], html: {class: 'form__box'} do |f|
         .form__box__inputs
           = f.text_field :text, class: 'form__box__inputs__text', placeholder: 'type a text'
