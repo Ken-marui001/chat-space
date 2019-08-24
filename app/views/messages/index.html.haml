@@ -24,6 +24,8 @@
               よろしくお願いします
             =image_tag " ", alt: " ", title: ""
       = render 'message'
+      - @messages.each do |message|
+        = render 'message', message: message
     .form
       =form_for [@group, @message], html: {class: 'form__box'} do |f|
         .form__box__inputs
