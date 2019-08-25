@@ -1,18 +1,19 @@
 require 'rails_helper'
-describe Message do
+
+RSpec.describe Message, type: :model do
   describe '#create' do
-    describe 'can save' do
-      it "is valid with text, imag, group and user" do
-        expect(build.(:message)).to be_valid
+    context 'can save' do
+      it "is valid with text, image, group and user" do
+        expect(build(:message)).to be_valid
       end
       it "is valid with text, group and user" do
-        expect(build.(:message, image: nil)).to be_valid
+        expect(build(:message, image: nil)).to be_valid
       end
-      it "is valid with imag, group and user" do
-        expect(build.(:message, text: nil)).to be_valid
+      it "is valid with image, group and user" do
+        expect(build(:message, text: nil)).to be_valid
       end
     end
-    describe 'cannot save' do
+    context 'cannot save' do
       it "is invalid without text and image" do
         message = build(:message, text: nil, image: nil)
         message.valid?
