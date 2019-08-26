@@ -50,6 +50,7 @@
   background-color: #2f3e51;
   padding: 0 20px;
   height: calc(100vh - #{$side-header-height});
+  overflow: scroll;
 }
 
 .group{
@@ -102,6 +103,7 @@
   background-color: #fafafa;
   padding: 0 40px;
   padding-top: 23px;
+  overflow: scroll;
 }
 
 .message{
