@@ -3,14 +3,13 @@ $(function(){
 
   function addMessageHtml(message){
     let text_and_image = "";
-
+    
     if (message.text != "") {
       text_and_image += `<p class="message__list__box__text">
       ${message.text}
       </p>`
     }
     if (message.image.url != null) {
-      console.log(message.image);
       text_and_image += `<img src=${message.image.url} alt=" lz5lk5v 400x400">`
     }
     
