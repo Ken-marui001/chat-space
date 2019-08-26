@@ -2,15 +2,14 @@ $(function(){
   $('.form__box').on('submit', function(e){
     e.preventDefault();
     let formData = new FormData(this);
-    for(item of formData){
-      console.log(item);
-    }
-
+    let url = $(this).attr('action');
     $.ajax({
       type: 'post',
-      url: '',
-      data: '',
-      dataType: 'json'
+      url: url,
+      data: formData,
+      dataType: 'json',
+      processData: false,
+      contentType: false
     })
     .done(function(){
 
