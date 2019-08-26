@@ -19,5 +19,5 @@
           = f.text_field :text, class: 'form__box__inputs__text', placeholder: 'type a text'
           = f.label :image, class: 'form__box__inputs__image' do
             = fa_icon 'image'
-            = f.text_field :image
+            = f.file_field :image
         = f.submit 'Send', class: "form__box__send-button"
