@@ -9,7 +9,8 @@ $(function(){
       ${message.text}
       </p>`
     }
-    if (message.image != "") {
+    if (message.image.url != null) {
+      console.log(message.image);
       text_and_image += `<img src=${message.image.url} alt=" lz5lk5v 400x400">`
     }
     
@@ -35,9 +36,6 @@ $(function(){
     e.preventDefault();
     let formData = new FormData(this);
     let url = $(this).attr('action');
-    for(item of formData){
-      console.log(item);
-    }
     $.ajax({
       type: 'post',
       url: url,
@@ -48,6 +46,10 @@ $(function(){
     })
     .done(function(message){
       addMessageHtml(message);
+      console.log(messages_list.height());
+      messages_list.animate({
+        scrollTop: messages_list.height()
+      });
     })
     .fail(function(){
       alert('送信に失敗しました')
