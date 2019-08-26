@@ -1,7 +1,10 @@
 $(function(){
-  $('.form-box').on('submit', function(e){
-    e.preventDefaul();
+  $('.form__box').on('submit', function(e){
+    e.preventDefault();
     let formData = new FormData(this);
+    for(item of formData){
+      console.log(item);
+    }
 
     $.ajax({
       type: 'post',
