@@ -31,6 +31,12 @@ $(function(){
 
     messages_list.append(html);
   }
+
+  function scrollBottom(base){
+    base.animate({
+      scrollTop: base[0].scrollHeight
+    });
+  }
   
   $('.form__box').on('submit', function(e){
     e.preventDefault();
@@ -46,13 +52,12 @@ $(function(){
     })
     .done(function(message){
       addMessageHtml(message);
-      console.log(messages_list.height());
-      messages_list.animate({
-        scrollTop: messages_list.height()
-      });
+      scrollBottom(messages_list);
     })
     .fail(function(){
       alert('送信に失敗しました')
     });
+
+    return false;
   });
 });
