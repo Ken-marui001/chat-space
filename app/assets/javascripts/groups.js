@@ -63,6 +63,10 @@ $(function(){
   });
 
   $('.chat-group-users.js-add-user').on('click', '.js-remove-btn', function(){
-    
+    let index = $('.js-remove-btn').index(this) + 1;
+
+    $($('.js-add-user .chat-group-user')[index]).remove();
+
+    addMemberHtml(id, name);
   });
 });
