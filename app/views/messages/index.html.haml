@@ -6,8 +6,11 @@
       .main-header__title
         .main-header__title__name
           =@group.name
-        .main-header__title__info
-          Member : sample
+        %ul.main-header__title__info
+          Member : 
+          -@group.users.each do |user|
+            %li.main-header__title__info__list
+              =user.name
       =link_to edit_group_path(@group.id) do
         .main-header__edit-button
           Edit

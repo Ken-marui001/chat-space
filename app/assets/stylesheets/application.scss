@@ -85,9 +85,13 @@
       padding-top: 35px;
     }
     &__info{
+      display: flex;
       font-size: 12px;
       color: $color-info;
       padding-top: 15px;
+      &__list{
+        padding-left: 5px;
+      }
     }
   }
   &__edit-button{
