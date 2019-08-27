@@ -13,7 +13,7 @@ $(function(){
       text_and_image += `<img src=${message.image.url} alt=" lz5lk5v 400x400">`
     }
     
-    let html =`<div class="message">
+    let html =`<div class="message" data-id='${message.id}'>
     <ul class="message__list">
     <li class="message__list__info">
     <p class="message__list__info__name">
