@@ -5,10 +5,13 @@
     .main-header
       .main-header__title
         .main-header__title__name
-          sample
-        .main-header__title__info
-          Member : sample
-      =link_to edit_user_path(current_user) do
+          =@group.name
+        %ul.main-header__title__info
+          Member : 
+          -@group.users.each do |user|
+            %li.main-header__title__info__list
+              =user.name
+      =link_to edit_group_path(@group.id) do
         .main-header__edit-button
           Edit
     .messages
