@@ -3,6 +3,14 @@ class UsersController < ApplicationController
     
   end
 
+  def index
+    @users = User.all
+    respond_to do |format|
+      format.html {redirect_to root_path}
+      format.json {}
+    end
+  end
+
   def update
     if current_user.update(user_params)
       redirect_to root_path
