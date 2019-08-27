@@ -27,7 +27,7 @@ $(function(){
     </li>
     </ul>
     </div>`
-
+    return html;
     messages_list.append(html);
   }
 
@@ -38,11 +38,14 @@ $(function(){
   }
 
   let reloadMessages = function() {
+    if (location.pathname.match(/messages$/) == null) {
+      return;
+    }
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     last_message_id = $('.message').last().data('id');
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
-      url: "../api/messages",
+      url: "api/messages",
       //ルーティングで設定した通りhttpメソッドをgetに指定
       type: 'get',
       dataType: 'json',
@@ -50,10 +53,17 @@ $(function(){
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      console.log('success');
+      let insertHTML = '';
+
+      $.each(messages, function(index, message){
+        insertHTML += addMessageHtml(message);
+      });
+
+      messages_list.append(insertHTML);
+      scrollBottom(messages_list);
     })
     .fail(function() {
-      console.log('error');
+      alert('自動更新に失敗しました');
     });
   };
   
@@ -70,7 +80,7 @@ $(function(){
       contentType: false
     })
     .done(function(message){
-      addMessageHtml(message);
+      messages_list.append(addMessageHtml(message));
       scrollBottom(messages_list);
     })
     .fail(function(){
@@ -79,4 +89,6 @@ $(function(){
 
     return false;
   });
+
+  setInterval(reloadMessages, 5000);
 });
