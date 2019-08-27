@@ -4,7 +4,7 @@ $(function(){
   function addListHtml(user){
     let html = `<div class="chat-group-user clearfix">
     <p class="chat-group-user__name">${user.name}</p>
-    <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="9" data-user-name="ken">追加</a>
+    <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</a>
   </div>`
 
     search_result_list.append(html);
@@ -43,6 +43,8 @@ $(function(){
   });
 
   $('#user-search-result').on('click', '.chat-group-user__btn--add', function(){
-    console.log('btn-add');
+    let index = $('.chat-group-user__btn--add').index(this);
+    console.log(index);
+    $($('.chat-group-user')[index]).remove();
   });
 });
