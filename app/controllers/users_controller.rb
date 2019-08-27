@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").limit(20).order('id ASC')
     respond_to do |format|
       format.html {redirect_to root_path}
       format.json {}
