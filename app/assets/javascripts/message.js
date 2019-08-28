@@ -41,6 +41,8 @@ $(function(){
     if (location.pathname.match(/messages$/) == null) {
       return;
     }
+console.log('ajax');
+
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     last_message_id = $('.message').last().data('id');
     $.ajax({
@@ -54,8 +56,10 @@ $(function(){
     })
     .done(function(messages) {
       let insertHTML = '';
+      console.log('done');
 
       $.each(messages, function(index, message){
+        console.log(messages);
         insertHTML += addMessageHtml(message);
       });
 
