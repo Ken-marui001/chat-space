@@ -28,7 +28,6 @@ $(function(){
     </ul>
     </div>`
     return html;
-    messages_list.append(html);
   }
 
   function scrollBottom(base){
@@ -55,9 +54,8 @@ $(function(){
     })
     .done(function(messages) {
       let insertHTML = '';
-      console.log('done');
 
-      $.each(messages, function(index, message){
+      $.each(messages, function(message){
         insertHTML += addMessageHtml(message);
       });
 
