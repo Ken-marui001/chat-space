@@ -1,5 +1,4 @@
 $(function(){
-  let messages_list = $('.messages');
 
   function addMessageHtml(message){
     let text_and_image = "";
@@ -58,9 +57,8 @@ $(function(){
       $.each(messages, function(message){
         insertHTML += addMessageHtml(message);
       });
-
-      messages_list.append(insertHTML);
-      scrollBottom(messages_list);
+      $('.messages').append(insertHTML);
+      scrollBottom($('.messages'));
     })
     .fail(function() {
       alert('自動更新に失敗しました');
@@ -80,8 +78,9 @@ $(function(){
       contentType: false
     })
     .done(function(message){
-      messages_list.append(addMessageHtml(message));
-      scrollBottom(messages_list);
+      $('.messages').append(addMessageHtml(message));
+      $('.form form')[0].reset();
+      scrollBottom($('.messages'));
     })
     .fail(function(){
       alert('送信に失敗しました')
