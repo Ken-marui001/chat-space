@@ -68,7 +68,7 @@ $(function(){
     });
   };
   
-  $('.form__box').on('submit', function(e){
+  $(document).on('submit', $('.form__box'), function(e){
     e.preventDefault();
     let formData = new FormData(this);
     let url = $(this).attr('action');
