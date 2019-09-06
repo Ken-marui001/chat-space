@@ -52,13 +52,13 @@ $(function(){
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      let insertHTML = '';
+      let insertHTML = null;
 
       $.each(messages, function(message){
         insertHTML += addMessageHtml(message);
       });
       $('.messages').append(insertHTML);
-      scrollBottom($('.messages'));
+      if(insertHTML){scrollBottom($('.messages'));}
     })
     .fail(function() {
       alert('自動更新に失敗しました');

@@ -50,7 +50,7 @@ $(function(){
     });
   });
 
-  $('#user-search-result').on('click', '.chat-group-user__btn--add', function(){
+  $(document).on('click', '.chat-group-user__btn--add', function(){
     let index = $('.chat-group-user__btn--add').index(this);
     let name = $(this).attr('data-user-name');
     let id = $(this).attr('data-user-id');
@@ -60,11 +60,11 @@ $(function(){
     addMemberHtml(id, name);
   });
 
-  $('.chat-group-users.js-add-user').on('click', '.js-remove-btn', function(){
+  $(document).on('click', '.js-remove-btn', function(){
     let index = $('.js-remove-btn').index(this) + 1;
-
+    
     $($('.js-add-user .chat-group-user')[index]).remove();
 
-    addMemberHtml(id, name);
+    // addMemberHtml(id, name);
   });
 });
