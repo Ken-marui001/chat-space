@@ -65,10 +65,10 @@ $(function(){
     });
   };
   
-  $('.form__box').on('submit', function(e){
+  $(document).on('submit', '.form__box', function(e){
     e.preventDefault();
-    let formData = new FormData(this);
-    let url = $(this).attr('action');
+    let formData = new FormData($('.form__box')[0]);
+    let url = $('.form__box').attr('action');
     $.ajax({
       type: 'post',
       url: url,
@@ -80,13 +80,12 @@ $(function(){
     .done(function(message){
       $('.messages').append(addMessageHtml(message));
       $('.form form')[0].reset();
+      $('.form__box__send-button').prop('disabled', false);
       scrollBottom($('.messages'));
     })
     .fail(function(){
       alert('送信に失敗しました')
     });
-
-    return false;
   });
 
   setInterval(reloadMessages, 5000);
